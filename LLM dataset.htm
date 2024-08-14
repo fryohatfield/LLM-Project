@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sentiment140 dataset with 1.6 million tweets | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Sentiment analysis with tweets" />
+    <meta name="keywords" content="internet,online communities,social networks,languages,linguistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" type="text/javascript">
+    window["pageRequestStartTime"] = 1723640427628;
+    window["pageRequestEndTime"] = 1723640427794;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==">window.KAGGLE_JUPYTERLAB_PATH = "/static/jl2-static/jupyterlab-index-de53cf5bbd46ca5e45d1.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/kazanova/sentiment140" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=4026347c124527fae580" />
+
+  
+    
+ 
+      <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/kazanova/sentiment140" />
+    <meta property="og:title" content="Sentiment140 dataset with 1.6 million tweets" />
+    <meta property="og:description" content="Sentiment analysis with tweets" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/2477/4136/16575d5fdeeba8a6b94021e4bf2748d0/dataset-card.jpg" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Sentiment140 dataset with 1.6 million tweets","description":"### Context\n\nThis is the sentiment140 dataset. It contains 1,600,000 tweets extracted using the twitter api . The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiment .\n\n### Content\n\nIt contains the following 6 fields:\n\n1. **target**: the polarity of the tweet (*0* = negative, *2* = neutral, *4* = positive)\n\n2. **ids**: The id of the tweet ( *2087*)\n\n3. **date**: the date of the tweet (*Sat May 16 23:58:44 UTC 2009*)\n\n4. **flag**: The query (*lyx*). If there is no query, then this value is NO_QUERY.\n\n5. **user**: the user that tweeted (*robotickilldozr*)\n\n6.  **text**: the text of the tweet (*Lyx is cool*)\n\n\n### Acknowledgements\n\nThe official link regarding the dataset with resources about how it was generated is [here][1]\nThe official paper detailing the approach is  [here][2]\n\nCitation: Go, A., Bhayani, R. and Huang, L., 2009. Twitter sentiment classification using distant supervision. *CS224N Project Report, Stanford, 1(2009), p.12*.\n\n\n### Inspiration\n\nTo detect severity from tweets. You [may have a look at this][3].\n\n[1]: http://%20http://help.sentiment140.com/for-students/\n[2]: http://bhttp://cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf\n[3]: https://www.linkedin.com/pulse/social-machine-learning-h2o-twitter-python-marios-michailidis","url":"https://www.kaggle.com/kazanova/sentiment140","version":2,"keywords":["subject, science and technology, internet","subject, science and technology, internet, online communities","subject, science and technology, internet, online communities, social networks","subject, culture and humanities, languages","subject, people and society, social science, linguistics"],"license":{"@type":"CreativeWork","name":"Other (specified in description)","url":""},"identifier":["2477"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Μαριος Μιχαηλιδης KazAnova","url":"https://www.kaggle.com/kazanova","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/111640-fb.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/kazanova/sentiment140/download?datasetVersionNumber=2","contentSize":"84855679 bytes"}],"commentCount":18,"dateModified":"2017-09-13T22:43:19.117Z","discussionUrl":"https://www.kaggle.com/kazanova/sentiment140/discussion","alternateName":"Sentiment analysis with tweets","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/2477/4136/16575d5fdeeba8a6b94021e4bf2748d0/dataset-card.jpg","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":18},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":163832},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":924690},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":1830}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" src="/static/assets/runtime.js?v=bfd4aebfb8e877cf3f4b"></script>
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" src="/static/assets/vendor.js?v=f9bb802556d84365e3d2"></script>
+  <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" src="/static/assets/app.js?v=0e29c4bb21924b68a2f2"></script>
+    <script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '13981451'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="SOIq8mMOw0XJ8v4a2U6Bjg==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="SOIq8mMOw0XJ8v4a2U6Bjg==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+    <!-- Cheers, web-5fcb485c46-6q7qwp. -->
+
+  </main>
+</body>
+
+</html>
